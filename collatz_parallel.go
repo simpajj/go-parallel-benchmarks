@@ -36,8 +36,8 @@ func dowork(myid int) int {
 
 func main() {
 	runtime.GOMAXPROCS(2)
-	grain_value := flag.Int("graint", 10, "specify a grain int value")
-	grain = *grain_value
-	go dowork(grain)
+	grain := flag.Int("grain", 10, "specify a grain int value")
+	go dowork(*grain)
+	go dowork(*grain)
 	fmt.Printf("Finished.")
 }
