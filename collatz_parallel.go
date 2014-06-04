@@ -39,6 +39,5 @@ func main() {
 	grain_value := flag.Int("graint", 10, "specify a grain int value")
 	grain = *grain_value
 	go dowork(grain)
-	go dowork(grain)
 	fmt.Printf("Finished.")
 }
