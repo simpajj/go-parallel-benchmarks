@@ -1,8 +1,10 @@
 package main
 
 import (
-	"flag"
 	"fmt"
+	"os"
+	"runtime"
+	"strconv"
 )
 
 const COLLSEED = 827381
@@ -18,7 +20,7 @@ func dowork(myid int) int {
 		for i1 = 0; i1 < weight; i1++ {
 			for i2 = 0; i2 < weight; i2++ {
 				for i3 = 0; i3 < weight; i3++ {
-					collatz := COLLSEED
+					collatz = COLLSEED
 					for collatz != 1 {
 						if collatz%2 == 0 {
 							collatz = collatz / 2
@@ -34,8 +36,15 @@ func dowork(myid int) int {
 }
 
 func main() {
-	grain := flag.Int("grain", 10, "specify a grain int value")
-	go dowork(*grain)
-	go dowork(*grain)
+	runtime.GOMAXPROCS(runtime.NumCPU() * 2)
+	s1 := os.Args[1]
+	s2 := os.Args[2]
+	grain, err := strconv.Atoi(s1)
+	copies, err := strconv.Atoi(s2)
+	if err == nil {
+		for i := 0; i < copies; i++ {
+			go dowork(grain)
+		}
+	}
 	fmt.Printf("Finished.")
 }

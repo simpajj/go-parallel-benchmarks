@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"runtime"
+	"strconv"
 	"time"
 )
 
@@ -12,9 +15,15 @@ func p() {
 }
 
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU() * 2)
 	fmt.Println("Start")
-	go p()
-	go p()
-	time.Sleep(1 * time.Second)
+	s1 := os.Args[1]
+	copies, err := strconv.Atoi(s1)
+	if err == nil {
+		for i := 0; i < copies; i++ {
+			go p()
+		}
+	}
+	time.Sleep(time.Second * 1)
 	fmt.Println("Finish")
 }
