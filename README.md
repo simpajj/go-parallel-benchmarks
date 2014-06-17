@@ -8,3 +8,10 @@ All the executables can be using the following command:
 > 	./runscript.sh {argument 1} {argument 2}
 
 Argument 1 specifies the number of threads (or goroutines) and argument two the number of cores to be used.
+
+File types
+----------
+- SC: Sanity checks, not used for benchmarks
+- Micro: Microbenchmarks, simple operations
+- Component: Non-trivial operations/calculations, minimal I/O
+- Suite: Benchmarks taken from the Rodinia Parallel Benchmarking Suite and implemented in Go
