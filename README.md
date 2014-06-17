@@ -1,6 +1,6 @@
 Directory structure
 --------------------
-The source code can be found in the /src directory. Executable files are in the /bin directory. All the output is piped to files corresponding the the executable file names in the /output directory.
+The source code can be found in the /src directory. Executable files are in the /bin directory. All the output is piped to files corresponding to the executable file names in the /output directory.
 
 Running the executables
 -----------------------
