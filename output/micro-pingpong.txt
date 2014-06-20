@@ -6,3 +6,18 @@ sys	0m0.004s
 real	0m0.008s
 user	0m0.001s
 sys	0m0.003s
+panic: runtime error: index out of range
+
+goroutine 1 [running]:
+runtime.panic(0x9a940, 0x164a17)
+	/usr/local/go/src/pkg/runtime/panic.c:266 +0xb6
+main.main()
+	/Users/Simon/Desktop/Dissertation/code/src/micro-pingpong/ping_pong.go:23 +0x268
+
+real	0m0.023s
+user	0m0.001s
+sys	0m0.007s
+
+real	0m0.011s
+user	0m0.001s
+sys	0m0.004s
