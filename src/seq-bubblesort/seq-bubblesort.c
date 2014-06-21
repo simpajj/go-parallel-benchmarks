@@ -7,16 +7,15 @@ const int numberOfElements = 100;
 
 int main() {
 	srand(time(NULL));
-	long array[numberOfElements], n, c, d, swap;
-	n = 63;
+	long array[numberOfElements], c, d;
 
 	for (c = 0; c < numberOfElements; c++) 
 		array[c] = rand() % 101;
 
-	bubble_sort(array, n);
+	bubble_sort(array, numberOfElements);
 	printf("Sorted list:\n");
 
-	for(c = 0; c < n; c++) 
+	for(c = 0; c < numberOfElements; c++) 
 		printf("%ld\n", array[c]);
 
 	return 0;
