@@ -11,8 +11,8 @@ Argument 1 specifies the number of threads (or goroutines) and argument two the 
 
 File types
 ----------
-- SC: Sanity checks, not used for benchmarks
-- Seq: Sequential baseline measurements
-- Micro: Microbenchmarks, simple parallel operations
-- Component: Non-trivial parallel operations/calculations, minimal I/O
-- Suite: Benchmarks taken from the Rodinia Parallel Benchmarking Suite and implemented in Go
+- **SC**: Sanity checks, not used for benchmarks
+- **Seq**: Sequential baseline measurements
+- **Micro**: Microbenchmarks, simple parallel operations
+- **Component**: Non-trivial parallel operations, minimal I/O
+- **Suite**: Benchmarks taken from the Rodinia Parallel Benchmarking Suite and implemented in Go
