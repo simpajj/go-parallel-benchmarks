@@ -7,7 +7,7 @@ const int numberOfElements = 100;
 
 int main() {
 	srand(time(NULL));
-	long array[numberOfElements], c, d;
+	long array[numberOfElements], c;
 
 	for (c = 0; c < numberOfElements; c++) 
 		array[c] = rand() % 101;
