@@ -27,6 +27,7 @@ func main() {
 	runtime.GOMAXPROCS(cores)
 
 	broadcast_chan := make(chan string, goroutines)
+	// Remove go so it's not parallel?
 	go broadcast(broadcast_chan, goroutines)
 
 	if err == nil {
