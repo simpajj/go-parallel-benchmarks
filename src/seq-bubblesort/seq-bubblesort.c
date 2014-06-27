@@ -5,18 +5,22 @@
 void bubble_sort(long [], long);
 const int numberOfElements = 100;
 
-int main() {
+int main(int argc, char *argv[]) {
 	srand(time(NULL));
-	long array[numberOfElements], c;
+	long array[numberOfElements];
+	int i, c;
+	const int N = atoi(argv[1]);
 
-	for (c = 0; c < numberOfElements; c++) 
-		array[c] = rand() % 101;
+	for (i = 0; i <= N; i++) {
+		for (c = 0; c < numberOfElements; c++) 
+			array[c] = rand() % 101;
 
-	bubble_sort(array, numberOfElements);
-	printf("Sorted list:\n");
+		bubble_sort(array, numberOfElements);
+		printf("Sorted list:\n");
 
-	for(c = 0; c < numberOfElements; c++) 
-		printf("%ld\n", array[c]);
+		for(c = 0; c < numberOfElements; c++) 
+			printf("%ld\n", array[c]);
+	}
 
 	return 0;
 }

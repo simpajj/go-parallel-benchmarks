@@ -3,20 +3,23 @@
 #include <stdlib.h>
 
 long gcd(long, long);
-const int range = 1000000;
+const int range = 1000;
 
-int main() {
+int main(int argc, char *argv[]) {
 	srand(time(NULL));
-	long first, second, hcf, lcm;
+	int i, first, second, hcf, lcm;
+	const int N = atoi(argv[1]);
 
-	first = rand() % range;
-	second = rand() % range;
+	for (i = 0; i <= N; i++) {
+		first = rand() % range;
+		second = rand() % range;
 
-	hcf = gcd(first, second);
-	lcm = (first * second)/hcf;
+		hcf = gcd(first, second);
+		lcm = (first * second)/hcf;
 
-	printf("The greatest common divisor of %ld and %ld = %ld\n", first, second, hcf);
-	printf("The least common multiple of %ld and %ld = %ld\n", first, second, lcm);
+		printf("The greatest common divisor of %d and %d = %d\n", first, second, hcf);
+		printf("The least common multiple of %d and %d = %d\n", first, second, lcm);
+	}
 
 	return 0;
 }
