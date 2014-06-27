@@ -26,15 +26,16 @@ func multiplex(inputs []<-chan int, output chan<- int) {
 }
 
 func main() {
-	s1 := os.Args[1]
-	s2 := os.Args[2]
-	copies, err := strconv.Atoi(s1)
-	n, err := strconv.Atoi(s2)
-	runtime.GOMAXPROCS(n)
+	copies, err := strconv.Atoi(os.Args[1])
+	cores, err := strconv.Atoi(os.Args[2])
+	N, err := strconv.Atoi(os.Args[3])
+	runtime.GOMAXPROCS(cores)
 
 	inputs := make([]<-chan int, copies)
 	output := make(chan int)
-	if err == nil {
-		multiplex(inputs, output)
+	for i := 0; i <= N; i++ {
+		if err == nil {
+			go multiplex(inputs, output)
+		}
 	}
 }

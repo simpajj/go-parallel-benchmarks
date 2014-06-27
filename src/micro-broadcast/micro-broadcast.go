@@ -20,19 +20,20 @@ func listen(c <-chan string) {
 }
 
 func main() {
-	s1 := os.Args[1]
-	s2 := os.Args[2]
-	goroutines, err := strconv.Atoi(s1)
-	cores, err := strconv.Atoi(s2)
+	goroutines, err := strconv.Atoi(os.Args[1])
+	cores, err := strconv.Atoi(os.Args[2])
+	N, err := strconv.Atoi(os.Args[3])
 	runtime.GOMAXPROCS(cores)
 
 	broadcast_chan := make(chan string, goroutines)
-	// Remove go so it's not parallel?
-	go broadcast(broadcast_chan, goroutines)
 
-	if err == nil {
-		for i := 0; i <= goroutines; i++ {
-			go listen(broadcast_chan)
+	for i := 0; i <= N; i++ {
+		go broadcast(broadcast_chan, goroutines)
+
+		if err == nil {
+			for i := 0; i <= goroutines; i++ {
+				go listen(broadcast_chan)
+			}
 		}
 	}
 }
