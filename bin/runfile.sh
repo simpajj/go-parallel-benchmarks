@@ -1,4 +1,5 @@
 # Sequential benchmarks
+# TODO: change so that $1 = iterations, $2 = threads, $3 = cores
 { time ./seq-bubblesort; } 2>> ../output/seq-bubblesort.txt
 { time ./seq-binarysearch; } 2>> ../output/seq-binarysearch.txt
 { time ./seq-gcd-lcm; } 2>> ../output/seq-gcd-lcm.txt
