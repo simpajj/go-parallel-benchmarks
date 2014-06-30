@@ -3,6 +3,7 @@
 
 # If needed
 export GOOS=linux
+export GOARCH=amd64
 export GOPATH=$GOPATH
 export GOBIN=$GOPATH/bin
 

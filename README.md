@@ -7,7 +7,7 @@ Compiling the source code
 If you wish to compile the source code yourself you can do so using the install shell script: 
 > 	./install.sh
 
-It will compile all the code and place all the executables in the /bin directory.
+It will compile all the code and place all the executables in the /bin directory. The current binaries are compiled to run on linux/amd64.
 
 Running the executables
 -----------------------
