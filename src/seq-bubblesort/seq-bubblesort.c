@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
 	for (i = 0; i <= N; i++) {
 		for (c = 0; c < numberOfElements; c++) 
-			array[c] = rand() % 101;
+			array[c] = rand() % numberOfElements;
 
 		bubble_sort(array, numberOfElements);
 		printf("Sorted list:\n");
