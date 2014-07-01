@@ -11,10 +11,10 @@ It will compile all the code and place all the executables in the /bin directory
 
 Running the executables
 -----------------------
-All the executables can be run from the /bin folder using the following command: 
-> 	./runscript.sh {argument 1} {argument 2}
+All the executables can be run from the /bin folder using one of the runscripts, depending on which type of benchmark, e.g:  
+> 	./runsequential.sh {# of iterations}
 
-Argument 1 specifies the number of threads (or goroutines) and argument two the number of cores to be used. These arguments do not apply for all programs.
+Using the CLI, you can specify the number of iterations of the scripts. The number of threads or goroutines is automatically set to equal the number of processors available on the system. 
 
 File types
 ----------

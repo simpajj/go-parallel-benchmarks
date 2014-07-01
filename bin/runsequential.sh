@@ -1,4 +1,3 @@
-
 #$1 = number of iterations
 { time ./seq-bubblesort $1; } 2>> ../output/seq-bubblesort.txt
 { time ./seq-binarysearch $1; } 2>> ../output/seq-binarysearch.txt

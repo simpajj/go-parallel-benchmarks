@@ -7,8 +7,9 @@ void ping(int);
 int main (int argc, char *argv[]) {
 	int tid, i;
 	omp_set_dynamic(0);
-	omp_set_num_threads(atoi(argv[1]));
-	const int N = atoi(argv[2]);
+	const int N = atoi(argv[1]); // Iterations
+	int iCPU = omp_get_num_procs();
+	omp_set_num_threads(iCPU); // Threads
 
 	for (i = 0; i <= N; i++)
 		ping(tid);

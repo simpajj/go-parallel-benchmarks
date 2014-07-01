@@ -20,18 +20,17 @@ func listen(c <-chan string) {
 }
 
 func main() {
-	goroutines, err := strconv.Atoi(os.Args[1])
-	cores, err := strconv.Atoi(os.Args[2])
-	N, err := strconv.Atoi(os.Args[3])
-	runtime.GOMAXPROCS(cores)
+	N, err := strconv.Atoi(os.Args[1]) // Iterations
+	iCPU := runtime.NumCPU()
+	runtime.GOMAXPROCS(iCPU)
 
-	broadcast_chan := make(chan string, goroutines)
+	broadcast_chan := make(chan string, iCPU)
 
 	for i := 0; i <= N; i++ {
-		go broadcast(broadcast_chan, goroutines)
+		go broadcast(broadcast_chan, iCPU)
 
 		if err == nil {
-			for i := 0; i <= goroutines; i++ {
+			for i := 0; i <= iCPU; i++ {
 				go listen(broadcast_chan)
 			}
 		}

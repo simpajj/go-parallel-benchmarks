@@ -20,10 +20,9 @@ func pong(pings <-chan string, pongs chan<- string) {
 }
 
 func main() {
-	copies, err := strconv.Atoi(os.Args[1])
-	cores, err := strconv.Atoi(os.Args[2])
-	N, err := strconv.Atoi(os.Args[3])
-	runtime.GOMAXPROCS(cores)
+	copies := 2
+	N, err := strconv.Atoi(os.Args[1])
+	runtime.GOMAXPROCS(copies)
 
 	pings := make(chan string, 1)
 	pongs := make(chan string, 1)

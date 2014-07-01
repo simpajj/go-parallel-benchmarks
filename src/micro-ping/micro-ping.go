@@ -8,16 +8,15 @@ import (
 )
 
 func main() {
-	copies, err := strconv.Atoi(os.Args[1])
-	cores, err := strconv.Atoi(os.Args[2])
-	N, err := strconv.Atoi(os.Args[3])
-	runtime.GOMAXPROCS(cores)
+	N, err := strconv.Atoi(os.Args[1]) // Iterations
+	iCPU := runtime.NumCPU()
+	runtime.GOMAXPROCS(iCPU)
 
 	messages := make(chan string)
 
 	for i := 0; i <= N; i++ {
 		if err == nil {
-			for i := 0; i < copies; i++ {
+			for i := 0; i < iCPU; i++ {
 				go func() { messages <- "ping" }()
 
 				msg := <-messages
