@@ -7,7 +7,7 @@ Compiling the source code
 If you wish to compile the source code yourself you can do so using one of the compilation scripts, e.g: 
 > 	./gocompile.sh
 
-It will compile all the code and place all the executables in the /bin directory. The current binaries are compiled to run on the linux/amd64 or linux/386 architectures.
+It will compile all the code and place all the executables in the /bin directory. The current binaries are compiled to run on the linux/amd64 architecture.
 
 Running the executables
 -----------------------
