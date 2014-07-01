@@ -27,6 +27,6 @@ void broadcast(int count, int tid) {
 #pragma omp parallel private(tid)
 	{
 		tid = omp_get_thread_num();
-		printf("Count is: %d - Thread ID: %d\n", count, tid);
+		// printf("Count is: %d - Thread ID: %d\n", count, tid);
 	}
 }

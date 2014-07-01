@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"math/rand"
 	"os"
 	"strconv"
@@ -30,8 +30,8 @@ func main() {
 			if array[middle] < search {
 				first = middle + 1
 			} else if array[middle] == search {
-				fmt.Printf("%d found at location %d \n", search, middle+1)
-				break
+				// fmt.Printf("%d found at location %d \n", search, middle+1)
+				os.Exit(0)
 			} else {
 				last = middle - 1
 			}
@@ -40,7 +40,8 @@ func main() {
 		}
 
 		if first > last {
-			fmt.Println("The number is not in the list!")
+			// fmt.Println("The number is not in the list!")
+			os.Exit(0)
 		}
 	}
 }

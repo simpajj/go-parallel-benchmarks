@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"math/rand"
 	"os"
 	"strconv"
@@ -21,11 +21,11 @@ func main() {
 		}
 
 		bubble_sort(array, number_of_elements)
-		fmt.Printf("Sorted list:\n")
+		// fmt.Printf("Sorted list:\n")
 
-		for c := 0; c < number_of_elements; c++ {
-			fmt.Printf("%d\n", array[c])
-		}
+		// for c := 0; c < number_of_elements; c++ {
+		// 	fmt.Printf("%d\n", array[c])
+		// }
 	}
 }
 

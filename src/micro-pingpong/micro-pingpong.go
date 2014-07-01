@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"os"
 	"runtime"
 	"strconv"
@@ -32,7 +32,7 @@ func main() {
 			for i := 0; i < copies; i++ {
 				go ping(pings, "ping")
 				go pong(pings, pongs)
-				fmt.Println(<-pongs)
+				// fmt.Println(<-pongs)
 			}
 		}
 	}

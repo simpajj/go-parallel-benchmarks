@@ -17,8 +17,8 @@ int main(int argc, char *argv[]) {
 		hcf = gcd(first, second);
 		lcm = (first * second)/hcf;
 
-		printf("The greatest common divisor of %d and %d = %d\n", first, second, hcf);
-		printf("The least common multiple of %d and %d = %d\n", first, second, lcm);
+		// printf("The greatest common divisor of %d and %d = %d\n", first, second, hcf);
+		// printf("The least common multiple of %d and %d = %d\n", first, second, lcm);
 	}
 
 	return 0;

@@ -16,10 +16,10 @@ int main(int argc, char *argv[]) {
 			array[c] = rand() % numberOfElements;
 
 		bubble_sort(array, numberOfElements);
-		printf("Sorted list:\n");
+		// printf("Sorted list:\n");
 
-		for(c = 0; c < numberOfElements; c++) 
-			printf("%ld\n", array[c]);
+		// for(c = 0; c < numberOfElements; c++) 
+		// 	printf("%ld\n", array[c]);
 	}
 
 	return 0;

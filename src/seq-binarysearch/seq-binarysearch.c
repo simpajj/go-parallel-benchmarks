@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
 			if (array[middle] < search)
 				first = middle + 1;
 			else if (array[middle] == search) {
-				printf("%d found at location %d \n", search, middle + 1);
+				return 0
+				// printf("%d found at location %d \n", search, middle + 1);
 				break;
 			}
 			else
@@ -31,7 +32,8 @@ int main(int argc, char *argv[]) {
 			middle = (first + last)/2;
 		}
 		if (first > last)
-			printf("The number is not in the list!\n");
+			return 0
+			// printf("The number is not in the list!\n");
 	}
 	return 0;
 }

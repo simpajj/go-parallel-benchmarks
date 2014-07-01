@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"os"
 	"runtime"
 	"strconv"
@@ -16,7 +16,8 @@ func broadcast(c chan<- string, n int) {
 
 func listen(c <-chan string) {
 	msg := <-c
-	fmt.Println(msg)
+	_ = msg
+	// fmt.Println(msg)
 }
 
 func main() {

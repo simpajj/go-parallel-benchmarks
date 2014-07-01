@@ -34,5 +34,5 @@ void multiplex(int tid, int local, int sum, int iCPU, int i) {
 		}
 
 	}
-	printf("Sum is: %d\n", sum);
+	// printf("Sum is: %d\n", sum);
 }

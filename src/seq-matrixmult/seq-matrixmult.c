@@ -34,14 +34,14 @@ int main(int argc, char *argv[]) {
 			}
 		}
 
-		printf("Product: \n");
+		// printf("Product: \n");
 
-		for (c = 0; c < ROWS; c++) {
-			for (d = 0; d < COLS; d++) {
-				printf("%d\t", result[c][d]);
-			}
-			printf("\n");
-		} 
+		// for (c = 0; c < ROWS; c++) {
+		// 	for (d = 0; d < COLS; d++) {
+		// 		printf("%d\t", result[c][d]);
+		// 	}
+		// 	printf("\n");
+		// } 
 	}
 	return 0;
 }

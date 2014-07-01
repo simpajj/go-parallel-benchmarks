@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"os"
 	"runtime"
 	"strconv"
@@ -20,7 +20,8 @@ func main() {
 				go func() { messages <- "ping" }()
 
 				msg := <-messages
-				fmt.Println(msg)
+				_ = msg
+				// fmt.Println(msg)
 			}
 		}
 	}

@@ -43,7 +43,7 @@ void pingpong(int tid, int var) {
 #pragma omp master
 		{
 			tid = omp_get_thread_num();
-			printf("Tid: %d - value: %d\n", tid, var);
+			// printf("Tid: %d - value: %d\n", tid, var);
 		}
 	}
 }

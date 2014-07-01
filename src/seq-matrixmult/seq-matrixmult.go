@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"math/rand"
 	"os"
 	"strconv"
@@ -55,12 +55,12 @@ func main() {
 			}
 		}
 
-		fmt.Println("Product: \n")
-		for c := 0; c < ROWS; c++ {
-			for d := 0; d < COLS; d++ {
-				fmt.Printf("%d\t", result[c][d])
-			}
-			fmt.Printf("\n")
-		}
+		// fmt.Println("Product: \n")
+		// for c := 0; c < ROWS; c++ {
+		// 	for d := 0; d < COLS; d++ {
+		// 		fmt.Printf("%d\t", result[c][d])
+		// 	}
+		// 	fmt.Printf("\n")
+		// }
 	}
 }
