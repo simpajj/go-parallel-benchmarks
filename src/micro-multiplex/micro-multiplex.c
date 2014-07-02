@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void multiplex(int, int, int, int, int);
+void multiplex(int, int, int);
 
 int main(int argc, char *argv[])
 {
@@ -14,25 +14,27 @@ int main(int argc, char *argv[])
 	omp_set_num_threads(iCPU); // Threads
 
 	for (i = 0; i <= N; i++)
-		multiplex(tid, local, sum, iCPU, i);
+		multiplex(tid, local, sum);
 
 	return 0;
 }
 
-void multiplex(int tid, int local, int sum, int iCPU, int i) {
+void multiplex(int tid, int local, int sum) {
 #pragma omp parallel shared(sum) private(local)
 	{
 		tid = omp_get_thread_num();
 
-#pragma omp for 
-		for (i = 0; i <= iCPU; i++)
-			local = tid + 1;
-
 #pragma omp critical
 		{
+			local = tid + 1;
 			sum += local;
 		}
+#pragma omp barrier
 
+#pragma omp master
+		{
+			sum = sum;
+			// printf("Sum is: %d\n", sum);
+		}
 	}
-	// printf("Sum is: %d\n", sum);
 }

@@ -1,28 +1,36 @@
 package main
 
 import (
+	_ "fmt"
 	"os"
 	"runtime"
 	"strconv"
-	"sync"
 )
 
-/* Multiplexes multiple values onto a single channel */
-func multiplex(inputs []<-chan int, output chan<- int) {
-	var group sync.WaitGroup
-	for i := range inputs {
-		group.Add(1)
-		go func(input <-chan int) {
-			for val := range input {
-				output <- val
-			}
-			group.Done()
-		}(inputs[i])
-	}
+func broadcast(msg string) <-chan string {
+	c := make(chan string)
 	go func() {
-		group.Wait()
-		close(output)
+		for i := 0; ; i++ {
+			// c <- fmt.Sprintf("%s %d", msg, i)
+			continue
+		}
 	}()
+	return c
+}
+
+func multiplex(input1, input2 <-chan string) <-chan string {
+	c := make(chan string)
+	go func() {
+		for {
+			select {
+			case s := <-input1:
+				c <- s
+			case s := <-input2:
+				c <- s
+			}
+		}
+	}()
+	return c
 }
 
 func main() {
@@ -30,11 +38,10 @@ func main() {
 	iCPU := runtime.NumCPU()
 	runtime.GOMAXPROCS(iCPU)
 
-	inputs := make([]<-chan int, iCPU)
-	output := make(chan int)
 	for i := 0; i <= N; i++ {
 		if err == nil {
-			go multiplex(inputs, output)
+			_ = multiplex(broadcast("hello"), broadcast("world"))
+			// fmt.Println(<-c)
 		}
 	}
 }
