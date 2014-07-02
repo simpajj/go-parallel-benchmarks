@@ -8,16 +8,26 @@ import (
 )
 
 func broadcast(c chan<- string, n int) {
-	s := "broadcasting"
+	s := "broadcasted"
 	for i := 0; i <= n; i++ {
 		c <- s
 	}
 }
 
 func listen(c <-chan string) {
-	msg := <-c
-	_ = msg
-	// fmt.Println(msg)
+	select {
+	case msg, ok := <-c:
+		if ok {
+			_ = msg
+			// fmt.Printf("%s\n", msg)
+		} else {
+			// fmt.Println("Channel closed!")
+			break
+		}
+	default:
+		// fmt.Println("No value ready.")
+		break
+	}
 }
 
 func main() {
@@ -28,12 +38,9 @@ func main() {
 	broadcast_chan := make(chan string, iCPU)
 
 	for i := 0; i <= N; i++ {
-		go broadcast(broadcast_chan, iCPU)
-
 		if err == nil {
-			for i := 0; i <= iCPU; i++ {
-				go listen(broadcast_chan)
-			}
+			go broadcast(broadcast_chan, iCPU)
+			go listen(broadcast_chan)
 		}
 	}
 }

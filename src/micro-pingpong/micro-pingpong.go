@@ -7,13 +7,15 @@ import (
 	"strconv"
 )
 
-/* Sends pings */
-func ping(ping chan<- string, msg string) {
+/* Sends pings, should do the same as pong in other order */
+func pingpong(ping chan<- string, msg string, pongs <-chan string) {
 	ping <- msg
+	_ = <-pongs
+	// fmt.Println(<-pongs)
 }
 
 /* Receives pings and sends pongs */
-func pong(pings <-chan string, pongs chan<- string) {
+func pongping(pings <-chan string, pongs chan<- string) {
 	msg := <-pings
 	msg = "pong"
 	pongs <- msg
@@ -29,11 +31,8 @@ func main() {
 
 	for i := 0; i <= N; i++ {
 		if err == nil {
-			for i := 0; i < copies; i++ {
-				go ping(pings, "ping")
-				go pong(pings, pongs)
-				// fmt.Println(<-pongs)
-			}
+			go pingpong(pings, "ping", pongs)
+			go pongping(pings, pongs)
 		}
 	}
 }

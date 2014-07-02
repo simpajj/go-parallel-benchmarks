@@ -2,6 +2,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+// Include internal timers in all scripts to time parts of code and not only entire execution
+
 const int numberOfElements = 100;
 
 int main(int argc, char *argv[]) {

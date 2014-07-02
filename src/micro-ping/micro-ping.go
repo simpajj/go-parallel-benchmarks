@@ -16,13 +16,12 @@ func main() {
 
 	for i := 0; i <= N; i++ {
 		if err == nil {
-			for i := 0; i < iCPU; i++ {
-				go func() { messages <- "ping" }()
-
+			go func() { messages <- "ping" }()
+			go func() {
 				msg := <-messages
 				_ = msg
 				// fmt.Println(msg)
-			}
+			}()
 		}
 	}
 }
