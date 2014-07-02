@@ -2,10 +2,10 @@
 # --------------------------------------
 
 # If needed
-export GOOS=linux
-export GOARCH=amd64
-export GOPATH=$GOPATH
-export GOBIN=$GOPATH/bin
+#export GOOS=linux
+#export GOARCH=amd64
+#export GOPATH=$GOPATH
+#export GOBIN=$GOPATH/bin
 
 go install src/seq-binarysearch/seq-binarysearch.go
 go install src/seq-bubblesort/seq-bubblesort.go
