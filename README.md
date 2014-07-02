@@ -14,7 +14,7 @@ Running the executables
 All the executables can be run from the /bin folder using one of the runscripts, depending on which type of benchmark, e.g:  
 > 	./runsequential.sh {# of iterations}
 
-Using the CLI, you can specify the number of iterations of the scripts. The number of threads or goroutines is automatically set to equal the number of processors available on the system. 
+Using the CLI, you can specify the number of iterations of the scripts. The number of threads or goroutines is automatically set to equal the number of processors available on the system. Due to cross-compilation issues, the C source code has been left uncompiled and will have to be compiled on the target machine. 
 
 File types
 ----------
