@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <omp.h>
 
 unsigned int sum_divisors(unsigned int n) {
@@ -13,17 +14,19 @@ unsigned int sum_divisors(unsigned int n) {
 
 int main(int argc, char const *argv[])
 {
-	unsigned int a, b, result = 0;
+	unsigned int a = 284, b = 220, i;
+	bool result = false;
 	omp_set_dynamic(0);
-	omp_set_num_threads(atoi(argv[1])); // threads
-	const int N = atoi(argv[2]); // iterations
-	const int numbers = atoi(argv[3]);
+	const int N = atoi(argv[1]); // iterations
+  int iCPU = omp_get_num_procs();
+  omp_set_num_threads(iCPU)
 
 #pragma omp parallel for reduction(+:result) private(b)
-		for(a = 0; a < numbers; a++) {
+		for(i = 0; i < N; i++) {
 			b = sum_divisors(a);
-			if(b > a && sum_divisors(b) == a) result = result + a + b; 
+			if(sum_divisors(b) == a) result = true; 
 		}
 
+	printf("Final result = %d\n", result);
 	return 0;
 }
