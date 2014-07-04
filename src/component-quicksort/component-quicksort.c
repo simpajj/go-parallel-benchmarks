@@ -1,5 +1,3 @@
-/* DOES NOT WORK YET */
-
 #include <stdio.h>
 #include <omp.h>
 #include <stdio.h>
@@ -17,7 +15,7 @@ int main(int argc, char const *argv[])
 	int i;
 	const int N = atoi(argv[1]); // iterations
   int iCPU = omp_get_num_procs();
-  omp_set_num_threads(iCPU)
+  omp_set_num_threads(iCPU);
 	omp_set_dynamic(0);
 	srand(time(NULL));
 
@@ -26,7 +24,7 @@ int main(int argc, char const *argv[])
 
 #pragma omp parallel	
 	#pragma omp single
-	qsort_parallel(0, N-1);
+	qsort_parallel(0, RANGE-1);
 
 	return 0;
 }
