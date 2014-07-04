@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"math/rand"
 	"os"
 	"strconv"
@@ -33,7 +33,8 @@ func main() {
 
 	for i := 0; i <= N; i++ {
 		for j := 0; j < RANGE; j++ {
-			go fmt.Printf("Factorial of: %d = %d\n", arr[j], factorial(uint64(arr[j])))
+			// go fmt.Printf("Factorial of: %d = %d\n", arr[j], factorial(uint64(arr[j])))
+			go factorial(uint64(arr[j]))
 		}
 	}
 }
