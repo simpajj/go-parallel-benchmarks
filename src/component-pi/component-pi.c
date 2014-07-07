@@ -39,5 +39,5 @@ void montecarlo(double x, double y, double z, double pi, int count, int iCPU) {
     }
   } 
   pi = ((double)count/(double)(NITER*iCPU))*4.0;
-  printf("Pi: %f\n", pi);
+  // printf("Pi: %f\n", pi);
 }

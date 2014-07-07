@@ -25,6 +25,6 @@ int main(int argc, char const *argv[])
       for (i=0; i < n; i++)
           result += (a[i] * b[i]);
 
-    printf("Final result = %f\n", result);
+    // printf("Final result = %f\n", result);
   }
 }

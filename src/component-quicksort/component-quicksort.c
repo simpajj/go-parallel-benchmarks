@@ -71,6 +71,6 @@ void qsort_parallel(int l, int r){
 		}
 	}
 
-	for(i=0; i < RANGE; i++)
-		printf("%d\n", a[i]);
+	// for(i=0; i < RANGE; i++)
+	// 	printf("%d\n", a[i]);
 }

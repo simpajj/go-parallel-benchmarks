@@ -57,6 +57,6 @@ int main(int argc, char **argv)
     nprimes = 0;
     for (i = 2; i <= RANGE; i++)  
       if (prime[i]) nprimes++;
-    printf("number of primes found: %d\n", nprimes);
+    // printf("number of primes found: %d\n", nprimes);
   }
 }

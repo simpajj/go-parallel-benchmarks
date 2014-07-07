@@ -32,6 +32,6 @@ int factorial(int num)
    #pragma omp parallel for reduction(*:fac)
    for(n = 2; n <= num; ++n)
      fac *= n;
-   printf("%d\n", fac);
+   // printf("%d\n", fac);
    return fac;
  }
