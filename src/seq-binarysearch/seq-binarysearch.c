@@ -4,11 +4,11 @@
 
 // Include internal timers in all scripts to time parts of code and not only entire execution
 
-const int numberOfElements = 100;
+const int numberOfElements = 10000000;
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
-	int i, c, first, last, middle, search, array[100];
+	int i, c, first, last, middle, search, array[numberOfElements];
 	search = 13;
 	const int N = atoi(argv[1]);
 

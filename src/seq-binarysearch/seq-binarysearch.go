@@ -8,13 +8,13 @@ import (
 	"time"
 )
 
-const number_of_elements = 100
+const number_of_elements = 10000000
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	var first, last, middle int
 	search := 13
-	array := make([]int, 100)
+	array := make([]int, number_of_elements)
 	N, _ := strconv.Atoi(os.Args[1])
 
 	for i := 0; i <= N; i++ {
@@ -41,7 +41,7 @@ func main() {
 
 		if first > last {
 			// fmt.Println("The number is not in the list!")
-			os.Exit(0)
+			break
 		}
 	}
 }
