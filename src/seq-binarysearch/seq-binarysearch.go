@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-const number_of_elements = 10000000
+const number_of_elements = 100000
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())

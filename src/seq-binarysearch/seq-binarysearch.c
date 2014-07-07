@@ -4,7 +4,7 @@
 
 // Include internal timers in all scripts to time parts of code and not only entire execution
 
-const int numberOfElements = 10000000;
+#define numberOfElements 100000
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));

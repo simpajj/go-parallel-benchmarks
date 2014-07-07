@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void bubble_sort(long [], long);
-const int numberOfElements = 10000000;
+const int numberOfElements = 100000;
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
