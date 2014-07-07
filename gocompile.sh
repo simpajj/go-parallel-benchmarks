@@ -15,3 +15,8 @@ go install src/micro-broadcast/micro-broadcast.go
 go install src/micro-multiplex/micro-multiplex.go
 go install src/micro-ping/micro-ping.go
 go install src/micro-pingpong/micro-pingpong.go
+go install src/component-factorial/component-factorial.go
+go install src/component-dotprod/component-dotprod.go
+go install src/component-pi/component-pi.go
+go install src/component-primefilter/component-primefilter.go
+go install src/component-quicksort/component-quicksort.go

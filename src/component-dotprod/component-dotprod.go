@@ -3,6 +3,7 @@ package main
 import (
 	_ "fmt"
 	"os"
+	"runtime"
 	"strconv"
 )
 
@@ -18,6 +19,8 @@ func dotprod(A, B []float64, result float64) float64 {
 
 func main() {
 	N, _ := strconv.Atoi(os.Args[1]) // Iterations
+	iCPU := runtime.NumCPU()
+	runtime.GOMAXPROCS(iCPU)
 	A, B := make([]float64, 100), make([]float64, 100)
 
 	result := 0.0

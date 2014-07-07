@@ -30,7 +30,6 @@ func main() {
 	}
 
 	for i := 0; i <= N; i++ {
-		/* Populate matrices */
 		for c := 0; c < ROWS; c++ {
 			for d := 0; d < COLS; d++ {
 				first[c][d] = rand.Intn(RANGE - 0)
@@ -42,7 +41,6 @@ func main() {
 				second[c][d] = rand.Intn(RANGE - 0)
 			}
 		}
-
 		/* Multiply matrices */
 		for c := 0; c < ROWS; c++ {
 			for d := 0; d < COLS; d++ {
@@ -54,13 +52,5 @@ func main() {
 				sum = 0
 			}
 		}
-
-		// fmt.Println("Product: \n")
-		// for c := 0; c < ROWS; c++ {
-		// 	for d := 0; d < COLS; d++ {
-		// 		fmt.Printf("%d\t", result[c][d])
-		// 	}
-		// 	fmt.Printf("\n")
-		// }
 	}
 }

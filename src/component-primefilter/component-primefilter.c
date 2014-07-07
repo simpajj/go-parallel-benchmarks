@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <omp.h>
 
 #define MAX_N 100000000
 #define MAX_THREADS 100
@@ -37,9 +38,9 @@ int worker()
 
 int main(int argc, char **argv)
 {  
-  omp_set_dynamic(0);
   const int N = atoi(argv[1]); // Iterations
   int iCPU = omp_get_num_procs();
+  omp_set_dynamic(0);
   omp_set_num_threads(iCPU); // Threads
   int nprimes,  // number of primes found 
       i,

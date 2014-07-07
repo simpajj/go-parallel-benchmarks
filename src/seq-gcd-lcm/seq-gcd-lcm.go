@@ -22,9 +22,6 @@ func main() {
 		hcf = gcd(first, second)
 		lcm = (first * second) / hcf
 		_ = lcm
-
-		// fmt.Printf("The greatest common divisor of %d and %d = %d \n", first, second, hcf)
-		// fmt.Printf("The least common multiple of %d and %d = %d \n", first, second, lcm)
 	}
 }
 

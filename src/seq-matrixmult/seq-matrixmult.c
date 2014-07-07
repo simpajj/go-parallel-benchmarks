@@ -12,12 +12,10 @@ int main(int argc, char *argv[]) {
 	const int N = atoi(argv[1]);
 
 	for (i = 0; i <= N; i++) {
-		// Populate first matrix
 		for (c = 0; c < ROWS; c++) 
 			for (d = 0; d < COLS; d++)
 				first[c][d] = rand() % range;
 
-		// Populate second matrix
 		for (c = 0; c < ROWS; c++)
 			for (d = 0; d < COLS; d++)
 				second[c][d] = rand() % range;
@@ -33,15 +31,6 @@ int main(int argc, char *argv[]) {
 				sum = 0;
 			}
 		}
-
-		// printf("Product: \n");
-
-		// for (c = 0; c < ROWS; c++) {
-		// 	for (d = 0; d < COLS; d++) {
-		// 		printf("%d\t", result[c][d]);
-		// 	}
-		// 	printf("\n");
-		// } 
 	}
 	return 0;
 }

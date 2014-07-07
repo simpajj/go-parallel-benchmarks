@@ -4,6 +4,7 @@ import (
 	_ "fmt"
 	"math/rand"
 	"os"
+	"runtime"
 	"strconv"
 	"time"
 )
@@ -25,6 +26,8 @@ func factorial(n uint64) uint64 {
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	N, _ := strconv.Atoi(os.Args[1]) // Iterations
+	iCPU := runtime.NumCPU()
+	runtime.GOMAXPROCS(iCPU)
 
 	arr := make([]int, RANGE)
 	for i := 0; i < RANGE; i++ {
