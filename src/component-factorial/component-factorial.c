@@ -4,7 +4,7 @@
 
 int factorial(int);
 
-#define RANGE 10
+#define RANGE 1000
 
 int main(int argc, char const *argv[])
 {
