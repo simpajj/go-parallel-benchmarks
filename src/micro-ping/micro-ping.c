@@ -28,7 +28,7 @@ void ping(int tid, int var, int local) {
   	{
   		tid = omp_get_thread_num();
   		local = var;
-	  	printf("Ping from thread #%d: %d\n", tid, local);
+	  	// printf("Ping from thread #%d: %d\n", tid, local);
   	}
   }
 }
