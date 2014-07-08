@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#define RANGE 100
+#define RANGE 10000000
 
 void qsort(int, int);
 void qsort_parallel(int, int);

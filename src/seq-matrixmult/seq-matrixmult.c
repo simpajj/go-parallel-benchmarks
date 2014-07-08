@@ -6,10 +6,9 @@ const int range = 5;
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
-	enum { ROWS = 3, COLS = 3 };
+	const int N = atoi(argv[1]), ROWS = atoi(argv[2]), COLS = atoi(argv[3]);
 	int i, c, d, k, sum = 0;
-	int first[10][10], second[10][10], result[10][10];
-	const int N = atoi(argv[1]);
+	int first[ROWS][COLS], second[ROWS][COLS], result[ROWS][COLS];
 
 	for (i = 0; i <= N; i++) {
 		for (c = 0; c < ROWS; c++) 

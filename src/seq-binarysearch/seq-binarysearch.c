@@ -2,15 +2,11 @@
 #include <time.h>
 #include <stdlib.h>
 
-// Include internal timers in all scripts to time parts of code and not only entire execution
-
-#define numberOfElements 100000
-
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
-	int i, c, first, last, middle, search, array[numberOfElements];
-	search = 13;
 	const int N = atoi(argv[1]);
+	const int numberOfElements = atoi(argv[2]);
+	int i, c, first, last, middle, search = 13, array[numberOfElements];
 
 	for (i = 0; i <= N; i++) {
 		for (c = 0; c < numberOfElements; c++)
@@ -25,8 +21,6 @@ int main(int argc, char *argv[]) {
 				first = middle + 1;
 			else if (array[middle] == search) {
 				return 0;
-				// printf("%d found at location %d \n", search, middle + 1);
-				// break;
 			}
 			else
 				last = middle - 1;
@@ -35,7 +29,6 @@ int main(int argc, char *argv[]) {
 		}
 		if (first > last)
 			return 0;
-			// printf("The number is not in the list!\n");
 	}
 	return 0;
 }

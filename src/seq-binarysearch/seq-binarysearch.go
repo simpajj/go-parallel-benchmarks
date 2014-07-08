@@ -8,14 +8,13 @@ import (
 	"time"
 )
 
-const number_of_elements = 100000
-
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
+	N, _ := strconv.Atoi(os.Args[1])
+	number_of_elements, _ := strconv.Atoi(os.Args[2])
 	var first, last, middle int
 	search := 13
 	array := make([]int, number_of_elements)
-	N, _ := strconv.Atoi(os.Args[1])
 
 	for i := 0; i <= N; i++ {
 		for c := 0; c < number_of_elements; c++ {
@@ -30,8 +29,7 @@ func main() {
 			if array[middle] < search {
 				first = middle + 1
 			} else if array[middle] == search {
-				// fmt.Printf("%d found at location %d \n", search, middle+1)
-				os.Exit(0)
+				break
 			} else {
 				last = middle - 1
 			}
@@ -40,7 +38,6 @@ func main() {
 		}
 
 		if first > last {
-			// fmt.Println("The number is not in the list!")
 			break
 		}
 	}

@@ -8,12 +8,11 @@ import (
 	"time"
 )
 
-const number_of_elements = 100000
-
 func main() {
+	N, _ := strconv.Atoi(os.Args[1])
+	number_of_elements, _ := strconv.Atoi(os.Args[2])
 	array := make([]int, number_of_elements)
 	rand.Seed(time.Now().UTC().UnixNano())
-	N, _ := strconv.Atoi(os.Args[1])
 
 	for i := 0; i <= N; i++ {
 		for c := 0; c < number_of_elements; c++ {
@@ -21,11 +20,6 @@ func main() {
 		}
 
 		bubble_sort(array, number_of_elements)
-		// fmt.Printf("Sorted list:\n")
-
-		// for c := 0; c < number_of_elements; c++ {
-		// 	fmt.Printf("%d\n", array[c])
-		// }
 	}
 }
 

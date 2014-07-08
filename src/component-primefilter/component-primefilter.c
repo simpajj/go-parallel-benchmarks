@@ -3,7 +3,6 @@
 #include <omp.h>
 
 #define MAX_N 100000000
-#define MAX_THREADS 100
 #define RANGE 50000
 
 int prime[MAX_N+1],  

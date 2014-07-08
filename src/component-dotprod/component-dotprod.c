@@ -4,16 +4,17 @@
 
 int main(int argc, char const *argv[])
 {
-  int c, i, n = 100, chunk = 10;
-  omp_set_dynamic(0);
+  int c, i, chunk = 10;
   const int N = atoi(argv[1]); // iterations
+  const int SIZE = atoi(argv[2]);
+  omp_set_dynamic(0);
   int iCPU = omp_get_num_procs();
   omp_set_num_threads(iCPU);
-  float a[100], b[100], result;
+  float a[SIZE], b[SIZE], result;
   
   for (c = 0; c < N; c++) {
     result = 0.0;
-    for (i=0; i < n; i++) {
+    for (i=0; i < SIZE; i++) {
         a[i] = i * 1.0;
         b[i] = i * 2.0;
     }
@@ -22,9 +23,7 @@ int main(int argc, char const *argv[])
         schedule(static,chunk)      \
         reduction(+:result)
 
-      for (i=0; i < n; i++)
+      for (i=0; i < SIZE; i++)
           result += (a[i] * b[i]);
-
-    // printf("Final result = %f\n", result);
   }
 }

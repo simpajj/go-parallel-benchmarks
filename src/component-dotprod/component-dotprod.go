@@ -13,15 +13,15 @@ func dotprod(A, B []float64, result float64) float64 {
 	for i := 0; i < n; i++ {
 		result += A[i] * B[i]
 	}
-	// fmt.Printf("%f\n", result)
 	return result
 }
 
 func main() {
 	N, _ := strconv.Atoi(os.Args[1]) // Iterations
+	SIZE, _ := strconv.Atoi(os.Args[2])
 	iCPU := runtime.NumCPU()
 	runtime.GOMAXPROCS(iCPU)
-	A, B := make([]float64, 100), make([]float64, 100)
+	A, B := make([]float64, SIZE), make([]float64, SIZE)
 
 	result := 0.0
 	for i := 0; i <= N; i++ {
@@ -31,5 +31,4 @@ func main() {
 			go dotprod(A, B, result)
 		}
 	}
-	// fmt.Printf("%f", result)
 }
