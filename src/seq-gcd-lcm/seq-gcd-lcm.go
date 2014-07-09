@@ -16,8 +16,8 @@ func main() {
 	N, _ := strconv.Atoi(os.Args[1])
 
 	for i := 0; i <= N; i++ {
-		first = rand.Intn(RANGE - 0)
-		second = rand.Intn(RANGE - 0)
+		first = rand.Intn(RANGE-1) + 1
+		second = rand.Intn(RANGE-1) + 1
 
 		hcf = gcd(first, second)
 		lcm = (first * second) / hcf
