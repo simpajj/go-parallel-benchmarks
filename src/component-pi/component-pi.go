@@ -44,6 +44,5 @@ func main() {
 		}
 
 		_ = float64(count) / float64(NITER) * 4
-		// fmt.Printf("PI = %gn\n", pi)
 	}
 }
