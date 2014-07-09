@@ -10,9 +10,8 @@ import (
 func broadcast(msg string) <-chan string {
 	c := make(chan string)
 	go func() {
-		for i := 0; ; i++ {
-			// c <- fmt.Sprintf("%s %d", msg, i)
-			continue
+		for i := 0; i < 1; i++ {
+			c <- msg
 		}
 	}()
 	return c
@@ -41,7 +40,6 @@ func main() {
 	for i := 0; i <= N; i++ {
 		if err == nil {
 			_ = multiplex(broadcast("hello"), broadcast("world"))
-			// fmt.Println(<-c)
 		}
 	}
 }
