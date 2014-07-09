@@ -31,13 +31,12 @@ func main() {
 	N, _ := strconv.Atoi(os.Args[1])
 	iCPU := runtime.NumCPU()
 	runtime.GOMAXPROCS(iCPU)
-	ch := make(chan int, 1)
-	generate(ch)
 
 	for i := 0; i <= N; i++ {
+		ch := make(chan int, 1)
+		generate(ch)
 		for _ = range ch {
 			prime := <-ch
-			// fmt.Print(prime, "\n")
 			ch1 := make(chan int, 1)
 			go filter(ch, ch1, prime)
 			ch = ch1

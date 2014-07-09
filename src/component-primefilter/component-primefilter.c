@@ -6,9 +6,8 @@
 #define RANGE 50000
 
 int prime[MAX_N+1],  
-    nextbase;  // next sieve multiplier to be used
+    nextbase;
 
-// "crosses out" all odd multiples of k, from k*k on, k odd
 void crossout(int k)
 {  
   int i;
@@ -41,7 +40,7 @@ int main(int argc, char **argv)
   int iCPU = omp_get_num_procs();
   omp_set_dynamic(0);
   omp_set_num_threads(iCPU); // Threads
-  int nprimes,  // number of primes found 
+  int nprimes,
       i,
       j;
   for (j = 0; j <= N; j++) {
@@ -56,6 +55,5 @@ int main(int argc, char **argv)
     nprimes = 0;
     for (i = 2; i <= RANGE; i++)  
       if (prime[i]) nprimes++;
-    // printf("number of primes found: %d\n", nprimes);
   }
 }
