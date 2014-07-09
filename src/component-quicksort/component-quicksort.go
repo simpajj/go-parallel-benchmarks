@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-var RANGE int
+const RANGE = 1000
 
 func qsort_pass(arr []int, done chan int) []int {
 	if len(arr) < 2 {
@@ -42,9 +42,9 @@ func qsort_pass(arr []int, done chan int) []int {
 
 func qsort(arr []int) []int {
 	done := make(chan int)
-	defer func() {
-		close(done)
-	}()
+	// defer func() {
+	// 	close(done)
+	// }()
 
 	go qsort_pass(arr[:], done)
 
@@ -57,15 +57,15 @@ func qsort(arr []int) []int {
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
-	RANGE, _ := strconv.Atoi(os.Args[1])
+	N, _ := strconv.Atoi(os.Args[1])
 	iCPU := runtime.NumCPU()
 	runtime.GOMAXPROCS(iCPU)
 
 	arr := make([]int, RANGE)
-	for i := range arr {
-		arr[i] = rand.Intn(RANGE)
+	for i := 0; i <= N; i++ {
+		for j := range arr {
+			arr[j] = rand.Intn(RANGE)
+		}
+		qsort(arr)
 	}
-	//fmt.Println(arr)
-	qsort(arr)
-	//fmt.Println(arr)
 }
