@@ -2,10 +2,11 @@
 #include <time.h>
 #include <stdlib.h>
 
+#define numberOfElements 100
+
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
 	const int N = atoi(argv[1]);
-	const int numberOfElements = atoi(argv[2]);
 	int i, c, first, last, middle, search = 13, array[numberOfElements];
 
 	for (i = 0; i <= N; i++) {
