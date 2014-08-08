@@ -2,12 +2,13 @@
 #include <time.h>
 #include <stdlib.h>
 
+#define numberOfElements 100
+
 void bubble_sort(long [], long);
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
 	const int N = atoi(argv[1]);
-	const int numberOfElements = atoi(argv[2]);
 	long array[numberOfElements];
 	int i, c;
 

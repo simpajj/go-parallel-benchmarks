@@ -9,13 +9,13 @@ import (
 )
 
 const RANGE = 5
+const ROWS = 5
+const COLS = 5
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	var sum int = 0
 	N, _ := strconv.Atoi(os.Args[1])
-	ROWS, _ := strconv.Atoi(os.Args[2])
-	COLS, _ := strconv.Atoi(os.Args[3])
 
 	/* Create matrices */
 	first := make([][]int, ROWS)

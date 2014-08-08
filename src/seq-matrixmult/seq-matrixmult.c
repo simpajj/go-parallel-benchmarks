@@ -3,10 +3,12 @@
 #include <time.h>
 
 const int range = 5;
+#define ROWS 5
+#define COLS 5 
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
-	const int N = atoi(argv[1]), ROWS = atoi(argv[2]), COLS = atoi(argv[3]);
+	const int N = atoi(argv[1]);
 	int i, c, d, k, sum = 0;
 	int first[ROWS][COLS], second[ROWS][COLS], result[ROWS][COLS];
 

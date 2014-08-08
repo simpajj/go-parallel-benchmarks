@@ -8,9 +8,10 @@ import (
 	"time"
 )
 
+const number_of_elements = 100
+
 func main() {
 	N, _ := strconv.Atoi(os.Args[1])
-	number_of_elements, _ := strconv.Atoi(os.Args[2])
 	array := make([]int, number_of_elements)
 	rand.Seed(time.Now().UTC().UnixNano())
 
